@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Movie Recommender -Arthur Torres based on  Praveen Kumar work</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins:300,500&amp;display=swap'>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<style>
+html {
+  box-sizing: border-box;
+}
+
+
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 100%;
+    background-color: #ffffff;
+  line-height: 1.5;
+  color: #000;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -9;
+  height: 100%;
+  width: 100%;
+  visibility: hidden;
+  opacity: 0;
+}
+    .movie{
+        height: 70vh;
+        margin-top: 15vh;
+        margin-bottom: 15vh;
+        margin-right: 5vh;
+        margin-left: 5vh;
+        display: block;
+        background-color: white;
+        border-radius: 20px;
+        padding: 1em;
+        width: auto;
+        box-shadow: 0px -10px 20px -5px #E2E2E2;
+        text-align: center;
+    }
+
+    @media screen and (max-width:600px) {
+        .movie{
+            margin-top: 12vh;
+            margin-bottom: 12vh;
+        }
+}
+    table,tr,td,th{
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    td{
+      padding: 10px;  
+    }
+
+</style>
+</head>
+<body>
+
+<!-- Menu -->
+
+         
+
+    <div class="movie">
+        <h2><u>Recommendations:</u></h2>
+        <p>Showing results for: {{ search_name }}</p>
+        <table class="movie_table" align="center">
+            <tr>
+                <th>TV SHOW</th>
+            </tr>
+            <tbody class="table_body">
+                <tr>
+                    <td>{{ movie_names[0] }}</td>
+                </tr>
+                <tr>
+                    <td>{{ movie_names[1] }}</td>
+                </tr>
+                <tr>
+                    <td>{{ movie_names[2] }}</td>
+                </tr>
+                <tr>
+                    <td>{{ movie_names[3] }}</td>
+                </tr>
+                <tr>
+                    <td>{{ movie_names[4] }}</td>
+                </tr>
+                <tr>
+                    <td>{{ movie_names[5] }}</td>
+
+                </tr>
+               
+           
+            </tbody>
+        </table>
+        <br>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        
+<script>
+    
+    
+// Menu
+const Menu = (() => {
+  let s;
+
+  return {
+    settings() {
+      return {
+        body: $('body'),
+        open: 'js-menu-open',
+        visible: 'js-menu-visible',
+        overflow: 'js-overflow',
+        width: $(window).width(),
+        prevWidth: $(window).width() };
+
+    },
+
+
+
+
+
+// Inits
+$(() => {
+  // Spanize
+  const span = $('.js-span');
+  let $ele, words;
+
+  for (let i = 0; i < span.length; i++) {
+    $ele = $(span).eq(i);
+    words = $ele.html();
+
+    $ele.html(words.replace(/([A-z0-9'@+-<>.,'"“”‘’?!*&/]+)/g, '<span>$&</span>'));
+  }
+
+  Menu.init();
+});   
+ 
+</script>
+
+</body>
+</html>
