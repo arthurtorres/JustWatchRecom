@@ -17,7 +17,7 @@ from io import StringIO
 main = Blueprint('main', __name__)
 
 
-url = "https://raw.githubusercontent.com/arthurtorres/Test_Leo/main/data/dataJustWatch30000.csv"
+url = "https://raw.githubusercontent.com/arthurtorres/JustWatchRecom/main/data/dataJustWatch30000.csv"
 datas = pd.read_csv(url)
 datas["Titulo"] = datas["Titulo"].str.lower()
 
