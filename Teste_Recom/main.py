@@ -115,7 +115,7 @@ def teste():
         data = datas[(datas.Country.str.contains(current_user.country))]
         data.reset_index(inplace = True)
         data =data.drop(columns = ["index"])        
-        all_titles = datas['Titulo'].str.lower().tolist()
+        all_titles = data['Titulo'].str.lower().tolist()
 
 
 #        check = difflib.get_close_matches(m_name,all_titles,cutout=0.50,n=1)
