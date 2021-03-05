@@ -16,9 +16,12 @@ from io import StringIO
     
 main = Blueprint('main', __name__)
 
+url1  = "https://raw.githubusercontent.com/arthurtorres/JustWatchRecom/main/data/data1.csv"
+url2 =  "https://raw.githubusercontent.com/arthurtorres/JustWatchRecom/main/data/data2.csv"
+d1 = pd.read_csv(url1)
+d2 = pd.read_csv(url2)
+datas = pd.concat([d1,d2],ignore_index = True)
 
-url = "https://raw.githubusercontent.com/arthurtorres/JustWatchRecom/main/data/dataJustWatch30000.csv"
-datas = pd.read_csv(url)
 datas["Titulo"] = datas["Titulo"].str.lower()
 
 
